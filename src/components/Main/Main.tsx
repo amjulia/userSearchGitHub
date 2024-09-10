@@ -53,6 +53,7 @@ const Main: React.FC = () => {
       setLoading(false);
     }
   };
+
   const validateInput = (input: string): string | null => {
     if (input.trim() === "") {
       return "Поле не может быть пустым";
@@ -62,6 +63,7 @@ const Main: React.FC = () => {
     }
     return null;
   };
+
   const clearSearch = () => {
     setUsers([]);
     setError("");
@@ -84,6 +86,7 @@ const Main: React.FC = () => {
   const toggleOpen = (id: number) => {
     setOpenId((prevOpenId) => (prevOpenId === id ? null : id));
   };
+  
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     fetchUsers(page);
@@ -115,7 +118,14 @@ const Main: React.FC = () => {
               {user.login} - {user.repos} репозиториев
               {openId === user.id && (
                 <div>
-                  <ReposLink href={user.html_url}>{user.html_url}</ReposLink>
+                  <ReposLink
+                    href={user.html_url}
+                    onClick={(e) => e.stopPropagation()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {user.html_url}
+                  </ReposLink>
                 </div>
               )}
             </List>
