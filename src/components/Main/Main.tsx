@@ -53,6 +53,7 @@ const Main: React.FC = () => {
       setLoading(false);
     }
   };
+
   const validateInput = (input: string): string | null => {
     if (input.trim() === "") {
       return "Поле не может быть пустым";
@@ -62,6 +63,7 @@ const Main: React.FC = () => {
     }
     return null;
   };
+
   const clearSearch = () => {
     setUsers([]);
     setError("");
@@ -84,6 +86,7 @@ const Main: React.FC = () => {
   const toggleOpen = (id: number) => {
     setOpenId((prevOpenId) => (prevOpenId === id ? null : id));
   };
+  
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     fetchUsers(page);

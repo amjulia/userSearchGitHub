@@ -1,12 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "./components/Global.styled";
-import Main from "./components/Main/Main";
+import AppRoutes from "./AppRoutes";
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <Main />
+      <AppRoutes />
     </>
   );
 }
