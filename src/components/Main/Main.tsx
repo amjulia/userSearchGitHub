@@ -115,7 +115,14 @@ const Main: React.FC = () => {
               {user.login} - {user.repos} репозиториев
               {openId === user.id && (
                 <div>
-                  <ReposLink href={user.html_url}>{user.html_url}</ReposLink>
+                  <ReposLink
+                    href={user.html_url}
+                    onClick={(e) => e.stopPropagation()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {user.html_url}
+                  </ReposLink>
                 </div>
               )}
             </List>
