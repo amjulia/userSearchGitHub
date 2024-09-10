@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "moduleResolution": "bundler",
     "target": "es6",
-    "module": "commonjs",
+    "module": "ESNext",
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true
